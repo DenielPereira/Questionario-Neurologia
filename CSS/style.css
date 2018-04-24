@@ -6,6 +6,11 @@
     padding: 40px;
 }
 
+input[type=submit]:hover{
+  color: white;
+  background: rgb(48, 3, 90);
+}
+
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -48,6 +53,22 @@
   font-weight: bold;
   text-shadow: 1px 1px 1px black;
 }
+
+input[type=submit]  {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #46087F;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
 .form button:hover,.form button:active,.form button:focus {
   background: rgb(48, 3, 90);
 }
