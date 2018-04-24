@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>quiz</title>
-        <link rel="stylesheet" type="text/css" href="CSS/style.css">
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/registro.js"></script> 
-    </head>
-    <body>
-    <div class = "titulo">
+
+<head>
+    <meta charset="utf-8">
+    <title>quiz</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/registro.js"></script>
+    <script type="text/javascript" src="js/validar.js"></script>
+</head>
+
+<body>
+    <div class="titulo">
         <h1>Questionario de Neurologia</h1>
-    </div>        
+    </div>
     <div class="login-page">
         <div class="form">
             <form class="register-form">
-            <input type="text" placeholder="Usuário"/>
-            <input type="password" placeholder="Senha"/>
-            <input type="text" placeholder="E-mail"/>
+                <input type="text" placeholder="Usuário" />
+                <input type="password" placeholder="Senha" />
+                <input type="text" placeholder="E-mail" />
                 <button>Cadastrar</button>
-                <p class="message">Já tem uma conta? <a href="#">Entre aqui</a></p>
+                <p class="message">Já tem uma conta?
+                    <a href="#">Entre aqui</a>
+                </p>
             </form>
-            <form class="login-form">
-            <input type="text" placeholder="Usuário"/>
-            <input type="password" placeholder="Senha"/>
-                <button>Entrar</button>
-                <p class="message">Ainda não tem uma conta? <a href="#">Crie uma</a></p>
+            <form class="login-form" >
+                <input id="usuario" type="text" placeholder="Usuário" />
+                <input id="senha" type="password" placeholder="Senha" />
+                <button id="btn_entrar">Entrar</button>
+                <p class="message">Ainda não tem uma conta?
+                    <a href="#">Crie uma</a>
+                </p>
             </form>
         </div>
     </div>
-    </body>
+</body>
+
 </html>
