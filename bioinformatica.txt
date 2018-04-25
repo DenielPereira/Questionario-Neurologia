@@ -1,0 +1,130 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+  `idUsuario` INT NOT NULL AUTO_INCREMENT,
+  `Email` VARCHAR(100) NOT NULL,
+  `Nome` VARCHAR(50) NOT NULL,
+  `Sobrenome` VARCHAR(50) NOT NULL,
+  `Senha` VARCHAR(45) NOT NULL,
+  `Data_nascimento` DATE NOT NULL,
+  `Admin` TINYINT NULL,
+  PRIMARY KEY (`idUsuario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Perguntas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Perguntas` (
+  `idPerguntas` INT NOT NULL AUTO_INCREMENT,
+  `Pergunta` LONGTEXT NOT NULL,
+  PRIMARY KEY (`idPerguntas`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Respostas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Respostas` (
+  `idRespostas` INT NOT NULL AUTO_INCREMENT,
+  `Alternativa_a` VARCHAR(45) NOT NULL,
+  `Alternativa_b` VARCHAR(45) NOT NULL,
+  `Alternativa_c` VARCHAR(45) NOT NULL,
+  `Alternativa_d` VARCHAR(45) NULL,
+  `FKPerguntas` INT NOT NULL,
+  PRIMARY KEY (`idRespostas`),
+  INDEX `fk_Respostas_Perguntas1_idx` (`FKPerguntas` ASC),
+  CONSTRAINT `fk_Respostas_Perguntas1`
+    FOREIGN KEY (`FKPerguntas`)
+    REFERENCES `mydb`.`Perguntas` (`idPerguntas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Respostas_certas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Respostas_certas` (
+  `idRespostas_certas` INT NOT NULL AUTO_INCREMENT,
+  `Correta` VARCHAR(45) NOT NULL,
+  `Correta_outra` VARCHAR(45) NULL,
+  `Correta_outradois` VARCHAR(45) NULL,
+  `FKRespostas` INT NOT NULL,
+  `FKPerguntas` INT NOT NULL,
+  PRIMARY KEY (`idRespostas_certas`),
+  INDEX `fk_Respostas_certas_Respostas_idx` (`FKRespostas` ASC),
+  INDEX `fk_Respostas_certas_Perguntas1_idx` (`FKPerguntas` ASC),
+  CONSTRAINT `fk_Respostas_certas_Respostas`
+    FOREIGN KEY (`FKRespostas`)
+    REFERENCES `mydb`.`Respostas` (`idRespostas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Respostas_certas_Perguntas1`
+    FOREIGN KEY (`FKPerguntas`)
+    REFERENCES `mydb`.`Perguntas` (`idPerguntas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Perfomances`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Perfomances` (
+  `idPerfomances` INT NOT NULL AUTO_INCREMENT,
+  `Numero_acerto` INT NOT NULL,
+  `Numero_erro` INT NOT NULL,
+  `Data` DATE NOT NULL,
+  `FKUsuario` INT NOT NULL,
+  PRIMARY KEY (`idPerfomances`),
+  INDEX `fk_Perfomances_Usuario1_idx` (`FKUsuario` ASC),
+  CONSTRAINT `fk_Perfomances_Usuario1`
+    FOREIGN KEY (`FKUsuario`)
+    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Perfomances_has_Perguntas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Perfomances_has_Perguntas` (
+  `FKPerfomances` INT NOT NULL,
+  `FKPerguntas` INT NOT NULL,
+  INDEX `fk_Perfomances_has_Perguntas_Perguntas1_idx` (`FKPerguntas` ASC),
+  INDEX `fk_Perfomances_has_Perguntas_Perfomances1_idx` (`FKPerfomances` ASC),
+  CONSTRAINT `fk_Perfomances_has_Perguntas_Perfomances1`
+    FOREIGN KEY (`FKPerfomances`)
+    REFERENCES `mydb`.`Perfomances` (`idPerfomances`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Perfomances_has_Perguntas_Perguntas1`
+    FOREIGN KEY (`FKPerguntas`)
+    REFERENCES `mydb`.`Perguntas` (`idPerguntas`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
