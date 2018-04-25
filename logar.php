@@ -1,23 +1,23 @@
 <?php 
 session_start();
 
-$usuario = $_POST['usuario'];
-$senha = $_POST['senha'];
+$Email = $_POST['E-mail'];
+$Senha = $_POST['Senha'];
 
 $con = mysqli_connect("127.0.0.1", "root", "root") or die ("Sem conexão com o servidor");
-$select = mysqli_select_db($con,"teste") or die("Sem acesso ao DB");
+$select = mysqli_select_db($con,"bioinformatica") or die("Sem acesso ao DB");
  
-$result = mysqli_query("SELECT * FROM `usuario` WHERE `usuario` = '$usuario' AND `senha`= '$senha'");
+$result = mysqli_query("SELECT * FROM `Usuario` WHERE `Email` = '$Email' AND `Senha`= '$Senha'");
 
 if(mysqli_num_rows ($result) > 0 )
 {
-$_SESSION['usuario'] = $usuario;
-$_SESSION['senha'] = $senha;
+$_SESSION['Email'] = $Email;
+$_SESSION['Senha'] = $Senha;
 header('location:site.php');
 }
 else{
-    unset ($_SESSION['usuario']);
-    unset ($_SESSION['senha']);
+    unset ($_SESSION['Email']);
+    unset ($_SESSION['Senha']);
     header('location:site.php');
      
     }

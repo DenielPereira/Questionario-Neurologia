@@ -19,19 +19,20 @@
     <div class="login-page">
         <div class="form">
             <form class="register-form" action="registrar.php" method="POST">
-                              
-                <input type="text" placeholder="Usuário" />
-                <input type="password" placeholder="Senha" />
+                <input type="text" placeholder="Nome" />
+                <input type="text" placeholder="Sobrenome" />
                 <input type="text" placeholder="E-mail" />
-                <input type="submit" value="Cadastrar"/>  
+                <input type="password" placeholder="Senha" />
+                <input type="date" placeholder="data de nascimento" />
+                <input type="submit" value="Cadastrar" />
                 <p class="message">Já tem uma conta?
                     <a href="#">Entre aqui</a>
                 </p>
             </form>
             <form class="login-form" action="logar.php" method="POST">
-                <input name="usuario" id="usuario" type="text" required placeholder="Usuário" />
+                <input name="E-mail" id="E-mail" type="text" required placeholder="E-mail" />
                 <input name="senha" id="senha" type="password" required placeholder="Senha" />
-                <input  type="submit" value="entrar" name="entrar"/> 
+                <input type="submit" value="entrar" name="entrar" />
                 <p class="message">Ainda não tem uma conta?
                     <a href="#">Crie uma</a>
                 </p>
