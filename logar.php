@@ -18,7 +18,7 @@ header('location:site.php');
 else{
     unset ($_SESSION['email']);
     unset ($_SESSION['senha']);
-    echo "sem usuario";    
-    }
+    header("Location: javascript:history.back(1)");
+}
  
 ?>
