@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="stylesheet" type="text/css" href="CSS/style.css">
 <?php 
 
 session_start();
-if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
 {
-    unset($_SESSION['login']);
+    unset($_SESSION['email']);
     unset($_SESSION['senha']);
     echo"erro";
     }
  
-$logado = $_SESSION['login'];
+$logado = $_SESSION['email'];
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>SISTEMA WEB</title>
+<title>Quiz</title>
 </head>
  
 <body>

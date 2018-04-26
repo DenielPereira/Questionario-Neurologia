@@ -68,6 +68,11 @@
   display: none;
 }
 
+.avisos{
+  color: #e54646;
+  padding: 0px 0px 15px;
+}
+
 /* O codigo abaixo é um metodo paleativo para "alterar o placeholder" do campo
 input type="date". 
 Fonte: https://codepad.co/snippet/eS0e7ZBE by Gentle Media */
