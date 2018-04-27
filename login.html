@@ -22,18 +22,18 @@
                 <span id="aviso"></span>
             </div>
             <form class="register-form" action="registrar.php" method="POST">
-                <input type="text" required placeholder="Nome">
-                <input type="text" required placeholder="Sobrenome">
-                <input type="text" required placeholder="E-mail">
-                <input type="password" required placeholder="Senha">
-                <input type="date" required data-placeholder="Data de Nascimento">
-                <input type="submit" value="Cadastrar">
+                <input name="Nome" type="text" required placeholder="Nome">
+                <input name="Sobrenome" type="text" required placeholder="Sobrenome">
+                <input id="email" name="Email" type="email" required placeholder="E-mail"  onblur="checkEmail(this.value)">
+                <input name="Datanasc" type="date" required data-placeholder="Data de Nascimento">
+                <input name="Senha" type="password" required placeholder="Senha">
+                <input id="cadastrar" name="cadastrar" type="submit" value="Cadastrar">
                 <p class="message">Já tem uma conta?
                     <a href="#">Entre aqui</a>
                 </p>
             </form>
             <form class="login-form" action="logar.php" method="POST" id="login-form">
-                <input name="Email" id="Email" type="text" required placeholder="E-mail" />
+                <input name="Email" id="Email" type="text" required placeholder="E-mail"/>
                 <input name="senha" id="senha" type="password" required placeholder="Senha" />
                 <input id="entrar" type="submit" value="entrar" name="entrar" />
                 <p class="message">Ainda não tem uma conta?
