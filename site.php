@@ -22,10 +22,10 @@
 
 <body>
         <h1 = class="titulo">
-            <?php echo "Bem vindo, $logado." ?>
+            <?php echo "Bem vindo, $logado."; ?>
         </h1>
         <h1 = class="titulo">
-            <?php echo "Daqui pra frente é so com Jesus na causa." ?>
+            <?php echo "Daqui pra frente é so com Jesus na causa."; ?>
         </h1>
 </body>
 
