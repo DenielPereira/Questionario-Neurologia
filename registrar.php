@@ -10,5 +10,4 @@ $datanasc = $_POST['Datanasc'];
 $sql="INSERT INTO `usuario` (`Email`, `Nome`, `Sobrenome`, `Senha`, `Datanasc`)
 VALUES ('$email', '$nome', '$sobrenome', '$senha', '$datanasc')";
 
-
 ?>
