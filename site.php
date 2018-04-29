@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<link rel="stylesheet" type="text/css" href="CSS/style.css">
-<?php 
+<html>
 
-session_start();
-if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
-{
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    echo"erro";
-    }
- 
-$logado = $_SESSION['email'];
-?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Quiz</title>
-</head>
- 
-<body>
-<table width="800" height="748" border="1">
-  <tr>
-    <td height="90" colspan="2" bgcolor="#CCCCCC">SISTEM WEB TESTE
-    <?php
-    echo" Bem vindo $logado";
+<head>
+  <link rel="stylesheet" type="text/css" href="CSS/style.css">
+  <?php 
+
+    session_start();
+    if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+    {
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header("login.html");
+        echo"Como vc pretende entrar sem digitar nada?";
+        }
+    
+    $logado = $_SESSION['Nome'];
     ?>
-    </td>
-  </tr>
-  <tr>
-    <td width="103" height="410" bgcolor="#CCCCCC">MENU AQUI</td>
-    <td width="546">CONTEUDO E ICONES AQUI</td>
-  </tr>
-  <tr>
-    <td colspan="2" bgcolor="#000000"> </td>
-  </tr>
-</table>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Quiz</title>
+</head>
+
+<body>
+        <h1 = class="titulo">
+            <?php echo "Bem vindo, $logado."; ?>
+        </h1>
+        <h1 = class="titulo">
+            <?php echo "Daqui pra frente é so com Jesus na causa."; ?>
+        </h1>
 </body>
+
 </html>
