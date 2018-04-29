@@ -8,10 +8,19 @@ $sobrenome = $_POST['Sobrenome'];
 $senha = $_POST['Senha'];
 $datanasc = $_POST['Data_nascimento'];
 
-print_r($_POST);
+$sql = "INSERT INTO `Usuario` (idUsuario, Email, Nome, Sobrenome, Senha, Data_nascimento, Admin)
+VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc', NULL)";
 
+if (mysqli_query($con, $sql)) {
 
-$sql=("INSERT INTO `Usuario` VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc', NULL)");
+    echo "Seja bem vindo $nome";
 
+} else {
+
+    echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
+
+}
+
+mysqli_close($con);
 
 ?>
