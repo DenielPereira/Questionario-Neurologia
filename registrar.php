@@ -20,8 +20,9 @@ $sql = "INSERT INTO `Usuario` (idUsuario, Email, Nome, Sobrenome, Senha, Data_na
 VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc', NULL)";
 
 if (mysqli_query($con, $sql)) {
-
-    echo "<script> window.location.href = 'site.php';</script>";
+    echo "<script> alert('Cadastro feito sucesso!');</script>";
+    echo "<script> window.location.href = 'login.html';</script>";
+    
 
 } else {
 
