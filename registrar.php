@@ -21,7 +21,7 @@ VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc', NULL)";
 
 if (mysqli_query($con, $sql)) {
 
-    echo "Seja bem vindo $nome";
+    echo "<script> window.location.href = 'site.php';</script>";
 
 } else {
 
