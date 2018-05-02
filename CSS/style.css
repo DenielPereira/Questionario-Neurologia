@@ -15,7 +15,7 @@
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background: #ffffff;
   max-width: 360px;
   margin: 0 auto;
   padding: 45px;
@@ -39,7 +39,7 @@
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #46087F;
+  background: #680CBF;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -48,11 +48,25 @@
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  box-shadow: #5200a0 0px 0px 0px;
 }
 
-.form input[type=submit]:hover{
+.form input:focus{
+   outline: #54009f auto 5px; 
+}
+
+.form input[type=submit]:focus{
   color: white;
-  background: rgb(48, 3, 90);
+  background: #30035a;
+}
+
+.form input[type=submit]:blur{
+  color: white;
+  background: #680CBF;
+}
+
+.form input[type=submit]:hover {
+  outline: #1E0039 auto 5px;
 }
 
 .form .message {
@@ -85,6 +99,16 @@ input[type="date"]::before {
 input[type="date"]:focus::before,
 input[type="date"]:valid::before { display: none }
 
+.caixa {
+  position: relative;
+  background: #FFFFFF;
+  margin: 20px;
+  padding: 40px;
+  text-align: center;
+  font-size: 25px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
 body {
   background: #680CBF; /* para navegadores antigos */
   background: -webkit-linear-gradient(right, #680CBF, #a16fc2);
@@ -92,7 +116,48 @@ body {
   background: -o-linear-gradient(right, #680CBF, #a170c2);
   background: linear-gradient(to left, #680CBF, #a16fc2);
   font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
+
+.btn_continuar {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  background: #680CBF;
+  width: 200px;
+  border: 0;
+  margin: 40px 10px 10px 10px;;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: rgb(255, 255, 255) 0px 0px 1px; 
+  box-sizing: border-box; 
+  border-width: 0px;
+  border-style: none; 
+  border-color: #5f00b9;
+}
+
+.btn_continuar:hover {
+  outline: #1E0039 auto 5px;
+}
+
+.btn_continuar:focus{
+  color: white;
+  background: #30035a;
+}
+
+.btn_continuar:blur{
+  color: white;
+  background: #680CBF;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 
