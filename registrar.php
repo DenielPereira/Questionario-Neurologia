@@ -8,12 +8,16 @@ $sobrenome = $_POST['Sobrenome'];
 $senha = $_POST['Senha'];
 $datanasc = $_POST['Data_nascimento'];
 
+    if(is_string ($_POST['Nome'])){
+        die ("Isso nao é um nome");
+    }
+
 $verificar = mysqli_query($con, "SELECT * FROM `Usuario` WHERE `Email` = '$email'");
 $resultado = mysqli_num_rows($verificar);
 if ($resultado == 0){
     //prosseguir
 } else {
-    echo "Seu email já está cadastrado";
+    echo "<script> alert('Este email ja está cadastrado');</script>";
 }
 
 $sql = "INSERT INTO `Usuario` (idUsuario, Email, Nome, Sobrenome, Senha, Data_nascimento, Admin)
@@ -22,8 +26,6 @@ VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc', NULL)";
 if (mysqli_query($con, $sql)) {
     echo "<script> alert('Cadastro feito sucesso!');</script>";
     echo "<script> window.location.href = 'login.html';</script>";
-    
-
 } else {
 
     echo "Erro: " . $sql . "<br>" . mysqli_error($con);

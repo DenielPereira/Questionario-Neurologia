@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <title>quiz</title>
-    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="estilos/estilo.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/registro.js"></script>
-    <script type="text/javascript" src="js/validar.js"></script>
+    <script type="text/javascript" src="scripts/registro.js"></script>
+    <script type="text/javascript" src="scripts/validar.js"></script>
 </head>
 
 <body>
@@ -22,8 +22,8 @@
                 <span id="aviso"></span>
             </div>
             <form class="register-form" action="registrar.php" method="POST" id="register-form">
-                <input id="emailc" type="email" name="Email" required placeholder="E-mail"  onblur="checkEmail(this.value)">
-                <input type="text" id="Nome" name="Nome" required placeholder="Nome"/>
+                <input id="emailc" type="email" name="Email" required placeholder="E-mail" onkeypress="checkEmail(this.value)" onblur="checkEmail(this.value)">
+                <input id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome"/>
                 <input type="text" id="Sobrenome" name="Sobrenome" required placeholder="Sobrenome"/>
                 <input type="password" id="Senha" name="Senha" required placeholder="Senha"/>
                 <input type="date" id="Data_nascimento" name="Data_nascimento" required data-placeholder="Data de Nascimento"/>
@@ -33,7 +33,7 @@
                 </p>
             </form>
             <form class="login-form" action="logar.php" method="POST" id="login-form">
-                <input name="Email" id="Email" type="email" placeholder="E-mail" onblur="checkEmailLogin(this.value)"/>
+                <input name="Email" id="Email" type="email" placeholder="E-mail" required onkeypress="checkEmailLogin(this.value)" onblur="checkEmailLogin(this.value)"/>
                 <input name="senha" id="senha" type="password" required placeholder="Senha" />
                 <input id="entrar" type="submit" value="entrar" name="entrar" />
                 <p class="message">Ainda não tem uma conta?
@@ -42,6 +42,7 @@
             </form>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script src="js/script.js"></script>
+            <script src="js/scriptnome.js"></script>
         </div>
     </div>
 </body>
