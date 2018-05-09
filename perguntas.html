@@ -2,13 +2,16 @@
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="estilos/estilo.css">
+        <link rel="stylesheet" type="text/css" href="estilos/perguntas.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </head>    
-    <body>
+    <body class="bg-primary">
         <div class="titulo">
             <h1>Questionario de Neurologia</h1>
         </div>
-        <div class="fundo_pergunta">
+        <div class="col-md-3 card"></div>
+        <div class="col-md-6 card">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque?</p>
             <form action="">
                 <input id="a" type="radio" name="questao" value="a">
@@ -23,10 +26,17 @@
                 <label for="e">Lorem ipsum dolor sit amet.</label><br>
             </form>
         </div>
-        <div class="lados">
-            <button>Voltar</button>
+         <div class="col-md-3 card"></div>
+        <div class=" row lados">
+            <div class="col-md-4">
+            <button class="btn btn-primary">Voltar</button>
+            </div>
+            <div class="col-md-4">    
             <p>1/20</p>
-            <button>Proximo</button>
+            </div>    
+            <div class="col-md-4">    
+            <button class="btn btn-primary">Proximo</button>
+            </div>    
         </div>
     </body>
 </html>

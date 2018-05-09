@@ -1,0 +1,83 @@
+.form .registro {
+    display: none;
+}
+
+.form input{
+    margin-bottom: 15px;
+}
+
+.form input[type=submit]{
+    color: white;
+    background: #597993;
+    margin-top: 25px;
+}
+
+.form .message{
+    margin-top: 30px;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+.h-center {
+    display: flex;
+    justify-content: center;
+}
+
+.fill {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    background: $primary;
+}
+
+.card{
+    padding: 50px;
+}
+
+.login-page {
+    background: -webkit-linear-gradient(right, #9eb8d1, #597993);
+    background: -moz-linear-gradient(right, #9eb8d1, #597993);
+    background: -o-linear-gradient(right, #9eb8d1, #597993);
+    background: linear-gradient(to left, #9eb8d1, #597993);
+}
+
+.titulo{
+    border-bottom: 1px solid rgba(59, 59, 59, 0.29);
+}
+
+.subtitulo{
+    margin: 10px;
+    font-style: italic;
+}
+
+button{
+    color: white;
+    background: #597993;
+    width: 100%;
+}
+
+/* O codigo abaixo é um metodo paleativo para "alterar o placeholder" do campo
+input type="date". 
+Fonte: https://codepad.co/snippet/eS0e7ZBE by Gentle Media */
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+input[type="date"]::before { 
+  color: #757575;
+	content: attr(data-placeholder);
+	width: 100%;
+}
+
+
