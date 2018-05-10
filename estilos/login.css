@@ -72,6 +72,12 @@
     align-items: center;
 }
 
+.avisos{
+    color: #e54646;
+    padding: 0px 0px 10px;
+    font-size: 14px;
+}
+
 button{
     color: white;
     background: #597993;

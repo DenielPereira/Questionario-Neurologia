@@ -10,7 +10,7 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/registro.js"></script>
-    <!--<script type="text/javascript" src="scripts/validar.js"></script>-->
+    <script type="text/javascript" src="scripts/validar.js"></script>
 </head>
 <body class="text-center">
     <div class="login-page fill v-center h-center">    
@@ -28,7 +28,7 @@
             <div class="form center">    
             <form class="form-signup" action="registrar.php" method="POST" id="register-form">
                 <input class="form-control" id="emailc" type="email" name="Email" required placeholder="E-mail" onkeypress="checkEmail(this.value)" onblur="checkEmail(this.value)">
-                <input class="form-control" id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome"/>
+                <input class="form-control" id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome" onkeypress="VerificaNumero(this.value)"/>
                 <input class="form-control" type="text" id="Sobrenome" name="Sobrenome" required placeholder="Sobrenome"/>
                 <input class="form-control" type="password" id="Senha" name="Senha" required placeholder="Senha"/>
                 <input class="form-control" type="date" id="Data_nascimento" name="Data_nascimento" required data-placeholder="Data de Nascimento"/>

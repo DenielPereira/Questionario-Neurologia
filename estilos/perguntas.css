@@ -1,5 +1,19 @@
-/*@import url("estilo.css");*/
+@import url("login.css");
 
-.bg-primary{
-    background: important!
+body{
+    background: #597993;
 }
+
+.titulo{
+    text-align: center;
+}
+
+button{
+    width: 40%;
+}
+
+.card {
+    margin-left: 50%;
+    margin: 100px;
+}
+
