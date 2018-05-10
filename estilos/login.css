@@ -1,4 +1,4 @@
-.form .registro {
+.form .form-signup {
     display: none;
 }
 
@@ -14,6 +14,10 @@
 
 .form .message{
     margin-top: 30px;
+}
+
+.form-control{
+    display: initial!important;
 }
 
 .center {
@@ -46,7 +50,7 @@
     padding: 50px;
 }
 
-.login-page {
+.login-page{
     background: -webkit-linear-gradient(right, #9eb8d1, #597993);
     background: -moz-linear-gradient(right, #9eb8d1, #597993);
     background: -o-linear-gradient(right, #9eb8d1, #597993);
@@ -60,6 +64,12 @@
 .subtitulo{
     margin: 10px;
     font-style: italic;
+}
+
+.inicio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button{
