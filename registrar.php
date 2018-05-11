@@ -8,10 +8,6 @@ $sobrenome = $_POST['Sobrenome'];
 $senha = $_POST['Senha'];
 $datanasc = $_POST['Data_nascimento'];
 
-    if(is_string ($_POST['Nome'])){
-        die ("Isso nao é um nome");
-    }
-
 $verificar = mysqli_query($con, "SELECT * FROM `Usuario` WHERE `Email` = '$email'");
 $resultado = mysqli_num_rows($verificar);
 if ($resultado == 0){

@@ -7,13 +7,15 @@ function checkEmail(email)
     var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!regEx.test(email)){
         aviso.innerHTML = "Isso ainda não se parece com um endereço de e-mail :(";
-        campoEmail.style.outline = "#FF0000 auto 5px";
+        campoEmail.style.borderColor = "#ff8080";
+        campoEmail.style.boxShadow = "0 0 0 0.2rem rgba(255, 0, 0, 0.25)";
         botaoCadastro.style.cursor = "inherit";
         botaoCadastro.disabled = true;
         botaoCadastro.style.cursor = "not-allowed";
     }else{
         aviso.innerHTML = "";
-        campoEmail.style.outline = "#005500 auto 5px";
+        campoEmail.style.boxShadow = "0 0 0 0.2rem rgba(0, 155, 30, 0.39)";
+        campoEmail.style.borderColor = "#2e9d24";
         botaoCadastro.style.cursor = "pointer";
         botaoCadastro.disabled = false;
     }
@@ -27,7 +29,7 @@ function checkEmailLogin(email)
     var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!regEx.test(email)){
         aviso.innerHTML = "Isso ainda não se parece com um endereço de e-mail :(";
-        campoEmail.style.outline = "#FF0000 auto 5px";
+        campoEmail.style.borderColor = "#cc0000";
        // botaoEntrar.disabled = true;
     }else{
         aviso.innerHTML = "";
@@ -35,16 +37,5 @@ function checkEmailLogin(email)
       //  botaoEntrar.disabled = false;
     }
 
-}
-function VerificaNumero(n) {
-    var campoNome = document.getElementById("nome");
-    var aviso = document.getElementById("aviso");
-    if ($.isNumeric(n)){
-        aviso.innerHTML = "Isso não se parece com um nome."
-        campoNome.style.outline = "#FF0000 auto 5px";
-    }else{
-        aviso.innerHTML = "";
-        campoNome.style.outline = "#005500 auto 5px";
-    }
 }
 

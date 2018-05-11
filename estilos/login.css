@@ -20,6 +20,16 @@
     display: initial!important;
 }
 
+input.hl:invalid {
+    outline: #cc0000 auto 1px;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+ }
+
+input.hl:valid {
+    outline: #00cc00 auto 1px;
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 59, 0.25);
+ }
+
 .center {
 	display: flex;
 	justify-content: center;

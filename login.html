@@ -11,6 +11,7 @@
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/registro.js"></script>
     <script type="text/javascript" src="scripts/validar.js"></script>
+    <script type="text/javascript" src="scripts/errorcolor.js"></script>
 </head>
 <body class="text-center">
     <div class="login-page fill v-center h-center">    
@@ -28,11 +29,11 @@
             <div class="form center">    
             <form class="form-signup" action="registrar.php" method="POST" id="register-form">
                 <input class="form-control" id="emailc" type="email" name="Email" required placeholder="E-mail" onkeypress="checkEmail(this.value)" onblur="checkEmail(this.value)">
-                <input class="form-control" id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome" onkeypress="VerificaNumero(this.value)"/>
-                <input class="form-control" type="text" id="Sobrenome" name="Sobrenome" required placeholder="Sobrenome"/>
-                <input class="form-control" type="password" id="Senha" name="Senha" required placeholder="Senha"/>
+                <input class="form-control" id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome"  pattern="[^0-9]+" title="Seu nome tem numeros? :S"/>
+                <input class="form-control" type="text" id="Sobrenome" name="Sobrenome" required placeholder="Sobrenome" pattern="[^0-9]+" title="Seu sobrenome tem numeros? :S"/>
+                <input class="form-control" type="password" id="Senha" name="Senha" required placeholder="Senha" pattern="\d{4}" title="Sua senha precisa ter mais de 4 digitos."/>
                 <input class="form-control" type="date" id="Data_nascimento" name="Data_nascimento" required data-placeholder="Data de Nascimento"/>
-                <input class="form-control" type="submit" value="Cadastrar" id="cadastrar">
+                <input class="form-control" type="submit" value="Cadastrar" id="cadastrar" onClick="highlightAll()">
                 <p class="message">Já tem uma conta?
                     <a href="#">Entre aqui.</a>
                 </p>
