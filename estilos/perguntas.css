@@ -6,14 +6,13 @@
 }
 
 .caixa {
-  position: relative;
-  background: #FFFFFF;
-  margin: 20px;
-  padding: 40px;
-  text-align: justify;
-    text-indent: 15px;
-  font-size: 25px;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    position: relative;
+    background: #FFFFFF;
+    margin: 20px;
+    padding: 40px;
+    text-align: justify;
+    font-size: 25px;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .center {
@@ -43,14 +42,17 @@ button{
     background: #597993;
     text-transform: uppercase;
     color: white;
-box-shadow: rgb(255, 255, 255) 0px 0px 1px; 
-  box-sizing: border-box; 
-  border-width: 0px;
-  border-style: none; 
-  border-color: #5f00b9;
+    box-shadow: rgb(255, 255, 255) 0px 0px 1px; 
+    box-sizing: border-box; 
+    border-width: 0px;
+    border-style: none; 
+    border-color: #5f00b9;
 
 }
 
+p{
+    text-indent: 15px;
+}
 
 
 
