@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$email = $_POST['Email'];
+$email = $_POST['email'];
 $senha = $_POST['senha'];
 
 $con = mysqli_connect("127.0.0.1", "root", "root") or die ("Sem conexão com o servidor");
@@ -9,11 +9,11 @@ $select = mysqli_select_db($con,"bioinformatica") or die("Sem acesso ao DB");
 
 $result = mysqli_query($con, "SELECT * FROM `usuario` WHERE `email` = '$email' AND `senha`= '$senha'");
 
-			if(empty($_POST['Email']) && empty($_POST['senha'])){
+			if(empty($_POST['email']) && empty($_POST['senha'])){
 
 				die('Como você pretende entrar sem digitar nada?');
 
-			}else if(empty($_POST['Email'])){
+			}else if(empty($_POST['email'])){
 
 				die('Ops, parece que você esqueceu de digitar seu e-mail.');
 
@@ -31,7 +31,7 @@ $result = mysqli_query($con, "SELECT * FROM `usuario` WHERE `email` = '$email' A
 
 					unset ($_SESSION['email']);
 					unset ($_SESSION['senha']);
-					echo "Email ou senha invalidos.";
+					echo "email ou senha invalidos!";
 					
 				}	
  

@@ -9,7 +9,6 @@ function checkEmail(email)
         aviso.innerHTML = "Isso ainda não se parece com um endereço de e-mail :(";
         campoEmail.style.borderColor = "#ff8080";
         campoEmail.style.boxShadow = "0 0 0 0.2rem rgba(255, 0, 0, 0.25)";
-        botaoCadastro.style.cursor = "inherit";
         botaoCadastro.disabled = true;
         botaoCadastro.style.cursor = "not-allowed";
     }else{
@@ -29,12 +28,18 @@ function checkEmailLogin(email)
     var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(!regEx.test(email)){
         aviso.innerHTML = "Isso ainda não se parece com um endereço de e-mail :(";
-        campoEmail.style.borderColor = "#cc0000";
+        campoEmail.style.borderColor = "#ff8080";
+        campoEmail.style.boxShadow = "0 0 0 0.2rem rgba(255, 0, 0, 0.25)";
        // botaoEntrar.disabled = true;
     }else{
         aviso.innerHTML = "";
         campoEmail.style.outline = "0";
-      //  botaoEntrar.disabled = false;
+        campoEmail.style.border = "1px solid #ced4da";
+        campoEmail.style.boxShadow ="initial";
+        campoEmail.onfocus = function(){
+            campoEmail.style.boxShadow = "0 0 0 0.2rem rgba(0,123,255,.25)";
+            campoEmail.style.borderColor = "#80bdff";
+        }
     }
 
 }

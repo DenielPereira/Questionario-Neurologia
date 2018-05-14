@@ -1,5 +1,5 @@
 $("#entrar").click(function () { //ID Botão enviar
-    $("#form-signin").submit(function (e) //ID formulário
+    $("#login-form").submit(function (e) //ID formulário
     {
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
@@ -21,5 +21,5 @@ $("#entrar").click(function () { //ID Botão enviar
         e.preventDefault();
         e.unbind();
     });
-    $("#form-signin").submit(); //Submissão do formulário via ID
+    $("#login-form").submit(); //Submissão do formulário via ID
 });
