@@ -7,11 +7,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </head>    
     <body>
-        <div class="">
+        <div class="page">
         <div class="titulo">
-            <h1>Questionario de Neurologia</h1>
+            <h1>Questionario</h1>
         </div>
-        <div class="caixa">
+        <div class="caixa col-md-0">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque?</p>
             <form action="">
                 <input id="a" type="radio" name="questao" value="a">

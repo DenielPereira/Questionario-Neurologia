@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300, 400');
 
 .form .form-signup {
     display: none;
@@ -81,10 +82,11 @@ input.hl:valid {
 }
 
 .login-page{
-    background: -webkit-linear-gradient(right, #9eb8d1, #597993);
-    background: -moz-linear-gradient(right, #9eb8d1, #597993);
-    background: -o-linear-gradient(right, #9eb8d1, #597993);
-    background: linear-gradient(to left, #9eb8d1, #597993);
+    font-family: 'Open Sans', sans-serif;
+    background: -webkit-linear-gradient(right, #9eb8d1, #576E84);
+    background: -moz-linear-gradient(right, #9eb8d1, #576E84);
+    background: -o-linear-gradient(right, #9eb8d1, #576E84);
+    background: linear-gradient(to left, #9eb8d1, #576E84);
 }
 
 .titulo{

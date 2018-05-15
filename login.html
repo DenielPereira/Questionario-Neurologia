@@ -29,8 +29,8 @@
             <div class="form center card">    
             <form class="form-signup" action="registrar.php" method="POST" id="register-form">
                 <input class="form-control" id="emailc" type="email" name="Email" required placeholder="E-mail" onkeypress="checkEmail(this.value)" onblur="checkEmail(this.value)">
-                <input class="form-control" id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome"  pattern="\b[A-Za-zÀ-ú\s]{2,25}\b" title="Sem numeros ou caracteres especiais por favor :)"/>
-                <input class="form-control" type="text" id="Sobrenome" name="Sobrenome" required placeholder="Sobrenome" pattern="\b[A-Za-zÀ-ú\s]{2,25}\b" title="Sem numeros ou caracteres especiais por favor :)"/>
+                <input class="form-control" id="nome" type="text" id="Nome" name="Nome" required placeholder="Nome"  pattern="\b[A-Za-zÀ-ú\s]{2,25}\b" title="Seu nome não pode ter numeros ou caracteres especiais :)"/>
+                <input class="form-control" type="text" id="Sobrenome" name="Sobrenome" required placeholder="Sobrenome" pattern="\b[A-Za-zÀ-ú\s]{2,25}\b" title="Seu nome não pode ter numeros ou caracteres especiais :)"/>
                 <input class="form-control" type="password" id="Senha" name="Senha" required placeholder="Senha" pattern="^(?=.*\d)(?=.*[a-zA-Z]).{4,25}$" title="Sua senha precisa ter mais de 4 digitos (pelo menos uma letra e um numero)."/>
                 <input class="form-control" type="date" id="Data_nascimento" name="Data_nascimento" required data-placeholder="Data de Nascimento" placeholder="Data de nascimento" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="1918-01-01" max="2018-05-30"/>
                 <input class="form-control" type="submit" value="Cadastrar" id="cadastrar" onClick="highlightAll()">

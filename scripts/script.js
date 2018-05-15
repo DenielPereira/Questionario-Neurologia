@@ -11,7 +11,7 @@ $("#entrar").click(function () { //ID Botão enviar
                 success: function (data, textStatus, jqXHR) {
                     $("#aviso").text(data);
                     if (data == 'Login bem sucedido.') {
-                        window.location.href = "site.php";
+                        window.location.href = "firstpage.php";
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

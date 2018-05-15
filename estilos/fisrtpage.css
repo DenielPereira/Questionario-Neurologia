@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300, 400');
 
 .titulo{
     color: white;
@@ -23,7 +23,8 @@
 }
 
 body {
-    
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
     background: -webkit-linear-gradient(right, #9eb8d1, #597993);
     background: -moz-linear-gradient(right, #9eb8d1, #597993);
     background: -o-linear-gradient(right, #9eb8d1, #597993);

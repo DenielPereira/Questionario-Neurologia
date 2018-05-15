@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300, 400');
 
 .titulo{
+    font-weight: 300;
     color: white;
     text-align: center;
     padding: 40px;
 }
 
 .caixa {
+    font-weight: 300;
     position: relative;
     background: #FFFFFF;
     margin: 20px;
@@ -22,14 +25,22 @@
 }
 
 .btn-baixo{
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
 }
 
+.page {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
-    background: -webkit-linear-gradient(right, #9eb8d1, #597993);
-    background: -moz-linear-gradient(right, #9eb8d1, #597993);
-    background: -o-linear-gradient(right, #9eb8d1, #597993);
-    background: linear-gradient(to left, #9eb8d1, #597993);
+    background: -webkit-linear-gradient(right, #7c94ac, #7c94ac);
+    background: -moz-linear-gradient(right, #7c94ac, #7c94ac);
+    background: -o-linear-gradient(right, #7c94ac, #7c94ac);
+    background: linear-gradient(to left, #7c94ac, #7c94ac);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
@@ -39,15 +50,13 @@ button{
     justify-content: space-between;
     width: 200px;
     margin: 15px;
-    background: #597993;
     text-transform: uppercase;
+    background: #597993;
     color: white;
     box-shadow: rgb(255, 255, 255) 0px 0px 1px; 
     box-sizing: border-box; 
     border-width: 0px;
     border-style: none; 
-    border-color: #5f00b9;
-
 }
 
 p{
