@@ -74,11 +74,13 @@ input.hl:valid {
 
 .card{
     padding: 50px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.card .form {
+.card .form  {
     padding: 0px;
     border: 0;
+    box-shadow: none;
 }
 
 .login-page{
@@ -133,5 +135,4 @@ input[type="date"]::before {
 	content: attr(data-placeholder);
 	width: 100%;
 }
-
 
