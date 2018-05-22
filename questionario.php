@@ -13,7 +13,7 @@
         </div>
         <div class="caixa col-md-0">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet malesuada feugiat. Curabitur fermentum bibendum nulla, non dictum ipsum tincidunt non. Quisque convallis pharetra tempor. Donec id pretium leo. Pellentesque luctus massa non elit viverra pellentesque. Cras vitae neque molestie, rhoncus ipsum sit amet, lobortis dui. Fusce in urna sem. Vivamus vehicula dignissim augue et scelerisque?</p>
-            <form action="">
+            <form action="questbanco">
                 <input id="a" type="radio" name="questao" value="a">
                 <label for="a">Lorem ipsum dolor sit amet.</label><br>
                 <input id="b" type="radio" name="questao" value="b">
