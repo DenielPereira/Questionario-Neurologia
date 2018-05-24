@@ -9,13 +9,13 @@ $result = $con->query($sql); ?>
  while ($row = $result->fetch_assoc()) {
     echo $row['Enunciado']; "<br>" ?>
     
-        <HTML><input id="a" type="radio" name="questao" value="a">
-            <label for="a"> <?php echo $row['Alternativaa'] ?> </label><br></HTML>
-        <HTML><input id="b" type="radio" name="questao" value="b">
-            <label for="b"> <?php echo $row['Alternativab'] ?> </label><br></HTML>
-        <HTML><input id="c" type="radio" name="questao" value="c">
-            <label for="c"> <?php echo $row['Alternativac'] ?> </label><br></HTML>
-        <HTML><input id="d" type="radio" name="questao" value="d">
+        <HTML> <input id="a" type="radio" name="questao" value="a">
+            <label for="a"> <?php echo $row['Alternativaa'] ?> </label><br>
+                <input id="b" type="radio" name="questao" value="b">
+            <label for="b"> <?php echo $row['Alternativab'] ?> </label><br>
+                <input id="c" type="radio" name="questao" value="c">
+            <label for="c"> <?php echo $row['Alternativac'] ?> </label><br>
+                <input id="d" type="radio" name="questao" value="d">
             <label for="d"> <?php echo $row['Alternativad'] ?> </label><br></HTML>
 
     
