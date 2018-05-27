@@ -16,8 +16,8 @@ if ($resultado == 0){
     echo "<script> alert('Este email ja está cadastrado');</script>";
 }
 
-$sql = "INSERT INTO `Usuario` (idUsuario, Email, Nome, Sobrenome, Senha, Data_nascimento, Admin)
-VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc', NULL)";
+$sql = "INSERT INTO `Usuario` (idUsuario, Email, Nome, Sobrenome, Senha, Data_nascimento)
+VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc')";
 
 if (mysqli_query($con, $sql)) {
     echo "<script> alert('Cadastro feito sucesso!');</script>";
