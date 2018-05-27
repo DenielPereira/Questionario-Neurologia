@@ -21,7 +21,8 @@
 
 
 .form .message{
-    margin-top: 30px;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 .form-control{
@@ -35,15 +36,6 @@ input.hl:invalid {
     -moz-box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
     outline: #cc0000 auto 1px;
     box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
- }
-
-input.hl:valid {
-    -webkit-outline: #00cc00 auto 1px;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 255, 59, 0.25);
-    -moz-outline: #00cc00 auto 1px;
-    -moz-box-shadow: 0 0 0 0.2rem rgba(0, 255, 59, 0.25);
-    outline: #00cc00 auto 1px;
-    box-shadow: 0 0 0 0.2rem rgba(0, 255, 59, 0.25);
  }
 
 .center {
@@ -96,7 +88,8 @@ input.hl:valid {
 }
 
 .subtitulo{
-    margin: 10px;
+    font-size: 14px;
+    margin-top: 5px;
     font-style: italic;
 }
 
