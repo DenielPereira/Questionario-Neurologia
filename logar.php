@@ -8,6 +8,7 @@ $con = mysqli_connect("127.0.0.1", "root", "root") or die ("Sem conexão com o s
 $select = mysqli_select_db($con,"bioinformatica") or die("Sem acesso ao DB");
 
 $result = mysqli_query($con, "SELECT * FROM `usuario` WHERE `email` = '$email' AND `senha`= '$senha'");
+$dados = mysqli_fetch_array($result);
 
 			if(empty($_POST['email']) && empty($_POST['senha'])){
 
@@ -25,7 +26,10 @@ $result = mysqli_query($con, "SELECT * FROM `usuario` WHERE `email` = '$email' A
 
 					$_SESSION['email'] = $email;
 					$_SESSION['senha'] = $senha;
+					$_SESSION['idUsuario'] = $dados['idUsuario'];
 					echo "Login bem sucedido.";
+					echo $_SESSION['idUsuario'];
+					echo "<script> window.location.href = 'firstpage.html';</script>";
 
 				}else{
 
