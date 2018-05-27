@@ -1,0 +1,110 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema bioinformatica
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema bioinformatica
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `bioinformatica` DEFAULT CHARACTER SET utf8 ;
+USE `bioinformatica` ;
+
+-- -----------------------------------------------------
+-- Table `bioinformatica`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bioinformatica`.`Usuario` (
+  `idUsuario` INT NOT NULL AUTO_INCREMENT,
+  `Email` VARCHAR(100) NOT NULL,
+  `Nome` VARCHAR(50) NOT NULL,
+  `Sobrenome` VARCHAR(50) NOT NULL,
+  `Senha` VARCHAR(45) NOT NULL,
+  `Data_nascimento` DATE NOT NULL,
+  `Admin` TINYINT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`idUsuario`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bioinformatica`.`Pergunta`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bioinformatica`.`Pergunta` (
+  `idPergunta` INT NOT NULL AUTO_INCREMENT,
+  `Enunciado` VARCHAR(200) NOT NULL,
+  `Alternativaa` VARCHAR(100) NOT NULL,
+  `Alternativab` VARCHAR(100) NOT NULL,
+  `Alternativac` VARCHAR(100) NOT NULL,
+  `Alternativad` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`idPergunta`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bioinformatica`.`Resp_usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bioinformatica`.`Resp_usuario` (
+  `idResp_usuario` INT NOT NULL AUTO_INCREMENT,
+  `Escolha` CHAR(1) NOT NULL,
+  `FKUsuario` INT NOT NULL,
+  `FKPergunta` INT NOT NULL,
+  PRIMARY KEY (`idResp_usuario`),
+  INDEX `fk_Resp_usuario_Usuario_idx` (`FKUsuario` ASC),
+  INDEX `fk_Resp_usuario_Pergunta1_idx` (`FKPergunta` ASC),
+  CONSTRAINT `fk_Resp_usuario_Usuario`
+    FOREIGN KEY (`FKUsuario`)
+    REFERENCES `bioinformatica`.`Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Resp_usuario_Pergunta1`
+    FOREIGN KEY (`FKPergunta`)
+    REFERENCES `bioinformatica`.`Pergunta` (`idPergunta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bioinformatica`.`Resp_certa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bioinformatica`.`Resp_certa` (
+  `idResp_certa` INT NOT NULL AUTO_INCREMENT,
+  `Valor` CHAR(1) NOT NULL,
+  `Valor2` CHAR(1) NULL,
+  `Valor3` CHAR(1) NULL,
+  `FKPergunta` INT NOT NULL,
+  PRIMARY KEY (`idResp_certa`),
+  INDEX `fk_Resp_certa_Pergunta1_idx` (`FKPergunta` ASC),
+  CONSTRAINT `fk_Resp_certa_Pergunta1`
+    FOREIGN KEY (`FKPergunta`)
+    REFERENCES `bioinformatica`.`Pergunta` (`idPergunta`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bioinformatica`.`Historico`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bioinformatica`.`Historico` (
+  `idHistorico` INT NOT NULL AUTO_INCREMENT,
+  `Data` DATE NOT NULL,
+  `Quant_acertos` INT NOT NULL,
+  `Quant_erros` INT NOT NULL,
+  `FKUsuario` INT NOT NULL,
+  PRIMARY KEY (`idHistorico`),
+  INDEX `fk_Historico_Usuario1_idx` (`FKUsuario` ASC),
+  CONSTRAINT `fk_Historico_Usuario1`
+    FOREIGN KEY (`FKUsuario`)
+    REFERENCES `bioinformatica`.`Usuario` (`idUsuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
