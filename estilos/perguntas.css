@@ -45,7 +45,7 @@ body {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
-button{
+.btn{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -63,6 +63,8 @@ button{
 p{
     text-indent: 15px;
 }
+
+
 
 
 
