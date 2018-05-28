@@ -22,10 +22,19 @@ mysqli_set_charset($con, 'utf8');
 
 $sql = "SELECT * FROM Pergunta ORDER BY rand()";
 $result = $con->query($sql); ?>
- <?php for($i=1;$i<4;$i++){
+ <?php 
+ $f = 1;
+ for($i=1;$i<4;$i++){
     ?>
 <?php if ($result->num_rows > 0){
- while ($row = $result->fetch_assoc()) { ?>
+ while ($row = $result->fetch_assoc()) { 
+     
+    $_SESSION['idPergunta'] = $row['idPergunta'];
+
+    
+  
+    
+    ?>
 
     <div class="page">
         <div class="titulo">
@@ -37,20 +46,20 @@ $result = $con->query($sql); ?>
             <?php echo $row['Enunciado']; ?>
             <br>
             <form action="process.php" method="POST">
-                <input id="a <?php echo $i; ?>" type="radio" name="alternativa <?php echo $i; ?>" value="a">
-                <label for="a <?php echo $i; ?>">
+                <input id="a<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="a">
+                <label for="a<?php echo $f; ?>">
                     <?php echo $row['Alternativaa'] ?> </label>
                 <br>
-                <input id="b <?php echo $i; ?>" type="radio" name="alternativa <?php echo $i; ?>" value="b">
-                <label for="b <?php echo $i; ?>">
+                <input id="b<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="b">
+                <label for="b<?php echo $f; ?>">
                     <?php echo $row['Alternativab'] ?> </label>
                 <br>
-                <input id="c <?php echo $i; ?>" type="radio" name="alternativa <?php echo $i; ?>" value="c">
-                <label for="c <?php echo $i; ?>">
+                <input id="c<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="c">
+                <label for="c<?php echo $f; ?>">
                     <?php echo $row['Alternativac'] ?> </label>
                 <br>
-                <input id="d <?php echo $i; ?>" type="radio" name="alternativa <?php echo $i; ?>" value="d">
-                <label for="d <?php echo $i; ?>">
+                <input id="d<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="d">
+                <label for="d<?php echo $f; ?>">
                   <?php echo $row['Alternativad'] ?> </label>
                 <br>
             
@@ -60,6 +69,8 @@ $result = $con->query($sql); ?>
 
 
 <?php
+$f++;
+
 }
 }else {
     echo "nao encontrou nada";

@@ -3,29 +3,25 @@ session_start();
 $con = mysqli_connect("127.0.0.1", "root", "root") or die ("Sem conexão com o servidor");
 $select = mysqli_select_db($con,"bioinformatica") or die("Sem acesso ao DB");
 
-$alternativapost =  $_POST["questao"];
-$alternativasession = $_SESSION['questao'];
-
-for($i=1;$i<4;$i++){
-if ( isset ( $_POST[$alternativapost.$i] ) ){
-    $alternativafim = $alternativasession.$i; 
-	$alternativafim = $alternativapost.$i;
-//	echo "Pegou o o valor da Session: ".$_SESSION['resposta']."";
-
-}else{
-	echo "Erro ao registrar a Session!";
-}
-}
-
 $idusu = $_SESSION['idUsuario'];
 
-for($a=1; $a<4; $a++){
-$respusu = $alternativapost.$a;
+for($e=1; $e<4; $e++){
+$auxi = "alternativa$e";
+if ( isset ( $_POST[$auxi] ) ){
+    $_SESSION[$auxi] = $_POST[$auxi];
+	echo "Pegou o o valor da Session: ".$_SESSION[$auxi]."";
+}else{
+    echo "Erro ao registrar a Session!";
+    echo $auxi;
+    echo $_POST[$auxi];
+}
+
+
+$respusu = $_SESSION[$auxi];
 $aux = $_SESSION['idPergunta'];
-$idperg = $aux.$a;
 
 $sql = "INSERT INTO `Resp_usuario` (idResp_usuario, Escolha, FKUsuario, FKPergunta) 
-VALUES (NULL,'$respusu', '$idusu', '$idperg')";
+VALUES (NULL,'$respusu', '$idusu', '$aux')";
 }
 
 if (mysqli_query($con, $sql)) {
