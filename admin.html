@@ -21,15 +21,15 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a href="#">
+                    <a href="#" onclick="openCity(event, 'home')">
                         <i class="glyphicon glyphicon-home"></i>
                         Home
                     </a>
-                    <a href="#">
+                    <a href="#" onclick="openCity(event, 'ferramentas')">
                         <i class="glyphicon glyphicon-cog"></i>
-                         Ferramentas
+                        Ferramentas
                     </a>
-                    <a href="#">
+                    <a href="#" onclick="openCity(event, 'usuarios')">
                         <i class="glyphicon glyphicon-user"></i>
                         Usuários
                     </a>
@@ -41,7 +41,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="btn btn-info navbar-btn">
+                        <button type="button" class="btn btn-info navbar-btn" onclick="questionario()">
                             <i class="glyphicon glyphicon-align-left"></i>
                             <span>Ir para o Questionario</span>
                         </button>
@@ -57,18 +57,81 @@
                 </div>
             </nav>
             <div class="text-center">
-            <h2>Painel do Administrador</h2>
-            <p>Olá $Usuario! Nesse painel de Administrador você poderá incluir, editar ou excluir as perguntas do Questionario.
-                Não se esqueça, "com grandes poderes, vêm grandes responsabilidades" - Ben, Tio (1999).</p>
+                <h2>Painel do Administrador</h2>
+                &nbsp;
+                <p>Olá
+                    <?php $_SESSION['nome']; ?>! Nesse painel de Administrador você poderá incluir, editar ou excluir as perguntas do Questionario.
+                    E não se esqueça, "com grandes poderes, vêm grandes responsabilidades" - Ben, Tio (1962).</p>
             </div>
-            <div class="text-center card"> oi nene tudo bom</div>
+
+            <div class="conteudo">
+                <div id="home" class="tabcontent text-center">
+                    <div class="col-md-6 card">
+                        <h3>Perguntas</h3>
+                        <ul style="list-style-type: none;">
+                            <li>20 perguntas cadastradas</li>
+                            <li>5 questionarios respondidos</li>
+                            <li>17 questionarios bem-sucedidos</li>
+                            <li>8 questionarios mal-sucedidos</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 card text-center">
+                        <h3>Usuários</h3>
+                        <ul style="list-style-type: none;">
+                            <li>6 usuários cadastrados</li>
+                            <li>11 usuários dao a bunda</li>
+                            <li>3 usuários querem morrer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="ferramentas" class="tabcontent">
+                    <div class="row" align="center">
+                        <div class="col-md-4">
+                            <button class="btn btn-primary">Inserir perguntas</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary">Editar perguntas</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary">Excluir perguntas</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="usuarios" class="tabcontent">
+                    <div class="row" align="center">
+                        <div class="card">
+                            <h3>usuários</h3>
+                            <ul style="list-style-type: none; text-align: left">
+                                    <li>Edson Arantes do Nascimento</li>
+                                    <li>Neymar da Silva</li>
+                                    <li>Joana D'arc Solteiro</li>
+                                    <li>Paula Tejano</li>
+                                    <li>Oscar Alho</li>
+                                    <li>Mijaru Numuru</li>
+                                    <li>Takuku Navara</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          
+        </div>
+
+
+
+
     </div>
+    <script type="text/javascript">
+        function questionario() {
+            location.href = "questbanco.php"
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/functions.js"></script>
 </body>
 
 </html>
