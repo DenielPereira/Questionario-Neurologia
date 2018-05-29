@@ -9,21 +9,18 @@ $erro = 0;
 
 for($e=1; $e<4; $e++){
     $auxi = "alternativa$e";
-    $assisti = "idPergunta $e";
+    $assist = "idPergunta $e";
 if ( isset ( $_POST[$auxi] ) ){
     $_SESSION[$auxi] = $_POST[$auxi];
-	echo "Pegou o o valor da Session: ".$_SESSION[$auxi]."";
 }else{
     echo "Erro ao registrar a Session!";
-    echo $auxi;
-    echo $_POST[$auxi];
 }
 
 $respusu = $_SESSION[$auxi];
-$aux = $_SESSION[$assisti];
+$idperg = $_SESSION[$assist];
 
 $sql = "INSERT INTO `Resp_usuario` (idResp_usuario, Escolha, FKUsuario, FKPergunta) 
-VALUES (NULL,'$respusu', '$idusu', '$aux')";
+VALUES (NULL,'$respusu', '$idusu', '$idperg')";
 
 if (mysqli_query($con, $sql)) {
     //prossegue;
@@ -32,9 +29,10 @@ if (mysqli_query($con, $sql)) {
     echo "Erro: " . $sql . "<br>" . mysqli_error($con);
 }
 
-$sql2 = "SELECT * FROM `Resp_certa` WHERE 'FKUsuario' = $idusu AND 'Valor' = $respusu";
-$resultado = $conn->query($sql2);
-if ($resultado->num_rows > 0){
+$sql2 = "SELECT * FROM `Resp_certa` 
+WHERE `FKPergunta` = '$idperg' AND `Valor` = '$respusu'";
+$resultado = mysqli_query($con, $sql2);
+if (mysqli_num_rows ($resultado) > 0){
  $acerto++;
 }else{
     $erro++;

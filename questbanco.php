@@ -31,7 +31,7 @@ $result = $con->query($sql); ?>
      
             $assist = "idPergunta $f";
             $_SESSION[$assist] = $row['idPergunta'];
-            echo $_SESSION[$assist];
+            
        
 
     
@@ -86,9 +86,6 @@ $f++;
         </div>
         </form>
        
-<?php echo $_SESSION['idPergunta 1']; 
-echo $_SESSION['idPergunta 2'];
-echo $_SESSION['idPergunta 3'];?>
 
 </body>
 
