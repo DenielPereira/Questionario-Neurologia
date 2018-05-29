@@ -14,6 +14,7 @@
         </div>
         </div>
 <?php
+session_start();
 $con = mysqli_connect("127.0.0.1", "root", "root") or die ("Sem conexão com o servidor");
 $select = mysqli_select_db($con,"bioinformatica") or die("Sem acesso ao DB");
 mysqli_set_charset($con, 'utf8');
@@ -85,6 +86,10 @@ $f++;
         </div>
         </form>
        
+<?php echo $_SESSION['idPergunta 1']; 
+echo $_SESSION['idPergunta 2'];
+echo $_SESSION['idPergunta 3'];?>
+
 </body>
 
 </html>
