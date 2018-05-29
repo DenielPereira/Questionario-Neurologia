@@ -25,21 +25,22 @@ $result = $con->query($sql); ?>
  <?php 
  $f = 1;
  for($i=1;$i<4;$i++){
-    ?>
-<?php if ($result->num_rows > 0){
- while ($row = $result->fetch_assoc()) { 
+    if ($result->num_rows > 0){
+        while ($row = $result->fetch_assoc()) { 
      
-    $_SESSION['idPergunta'] = $row['idPergunta'];
+            $assist = "idPergunta $f";
+            $_SESSION[$assist] = $row['idPergunta'];
+            echo $_SESSION[$assist];
+       
 
     
-  
-    
-    ?>
+        ?>
 
     <div class="page">
         <div class="titulo">
             <h3>Questão
-                <?php echo $i++; ?>
+                <?php echo $i++; 
+                ?>
             </h3>
         </div>
         <div class="caixa col-md-0">
@@ -83,7 +84,7 @@ $f++;
             </div>
         </div>
         </form>
-
+       
 </body>
 
 </html>
