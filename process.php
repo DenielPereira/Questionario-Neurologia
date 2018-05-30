@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="estilos/acertos.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>    
+    <body>
+        <div class="titulo text-center">  
+        <h1>Questionario de Neurologia</h1>
+        <div class="subtitulo text-center">  
+        <i>Resultado do Teste</i>
+        </div>
+        </div>
 <?php
 session_start();
 $con = mysqli_connect("127.0.0.1", "root", "root") or die ("Sem conexão com o servidor");
@@ -32,6 +48,7 @@ if (mysqli_query($con, $sql)) {
 $sql2 = "SELECT * FROM `Resp_certa` 
 WHERE `FKPergunta` = '$idperg' AND `Valor` = '$respusu'";
 $resultado = mysqli_query($con, $sql2);
+
 if (mysqli_num_rows ($resultado) > 0){
  $acerto++;
 }else{
@@ -39,10 +56,19 @@ if (mysqli_num_rows ($resultado) > 0){
 }
 
 }
-
-echo "Você acertou " .$acerto. " perguntas e errou " .$erro;
-
-
-
-
 ?>
+
+<div class="caixa center">
+
+    <ul style="list-style-type: none;">
+        <li style="color: green;"><?php echo "Acertos: " .$acerto?></li>
+        <li style="color: red;"><?php echo "Erros: " .$erro?></li>   
+    </ul>
+    
+</div>
+<div align="center">
+<button class="btn" onClick="window.location.href = 'historico.php'">ver meu histórico</button>
+</div>
+</body>
+
+</html>
