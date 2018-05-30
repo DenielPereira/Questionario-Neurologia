@@ -9,6 +9,12 @@
     </head>    
 </head>
 <body>
+<div class="titulo text-center">
+        <h1>Historico de Tentativas</h1>
+        <div class="text-center">
+            <i>Aqui estão todos os seus resultados de testes passados</i>
+        </div>
+    </div>
     <?php
     session_start();
 
@@ -22,13 +28,33 @@
     $result = $con->query($sql);
     if ($result->num_rows > 0){
         while ($row = $result->fetch_assoc()){
-            echo "Teste ".$i++;
-            echo $row['Data'];
-            echo $row['Quant_acertos']; 
-            echo $row['Quant_erros'];
+            ?>
+            <div class="tentativa" align="center">
+            <h3><?php echo $i++."ª tentativa"; ?></h3>
+            <i><?php echo $row['Data']; ?></i>
+        </div>
+        <div class="caixa text-center">
+        <ul style="list-style-type: none;">
+            <li style="color: green;">
+                <i class="fa fa-check-square-o"></i>
+                <?php echo "Acertos: " .$row['Quant_acertos']?>
+            </li>
+            <br>
+            <li style="color: red;">
+                <i class="fa fa-remove"></i>
+                <?php echo "Erros: " .$row['Quant_erros']?>
+            </li>
+        </ul>
+
+        </div>
+<?php 
         }
     }
     
     ?>
+    <div align="center">
+        <button class="btn" onClick="window.location.href = 'questbanco.php'">Tentar mais uma vez</button>
+        <button class="btn" onClick="window.location.href = 'http://google.com'">Sair</button>
+    </div>
 </body>
 </html>

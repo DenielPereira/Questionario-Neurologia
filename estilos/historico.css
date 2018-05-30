@@ -14,13 +14,22 @@ body {
     text-align: center;
     padding: 40px;
 }
+.tentativa{
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
 
 .caixa {
     color: #000;
     font-weight: 300;
     position: relative;
     background: #FFFFFF;
-    margin: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 150px;
+    margin-left: 150px;
     padding: 40px;
     text-align: justify;
     font-size: 25px;
