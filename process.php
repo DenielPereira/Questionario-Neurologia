@@ -10,7 +10,7 @@
     <body>
         <div class="titulo text-center">  
         <h1>Questionario de Neurologia</h1>
-        <div class="subtitulo text-center">  
+        <div class="text-center">  
         <i>Resultado do Teste</i>
         </div>
         </div>
@@ -72,14 +72,21 @@ if (mysqli_query($con, $sql3)) {
 ?>
 
 <div class="caixa center">
-
     <ul style="list-style-type: none;">
-        <li style="color: green;"><?php echo "Acertos: " .$acerto?></li>
-        <li style="color: red;"><?php echo "Erros: " .$erro?></li>   
+        <li style="color: green;">
+            <i class="fa fa-check-square-o"></i>
+            <?php echo "Acertos: " .$acerto?>
+        </li>
+        <br>
+        <li style="color: red;">
+            <i class="fa fa-remove"></i>
+            <?php echo "Erros: " .$erro?>
+        </li>   
     </ul>
     
 </div>
 <div align="center">
+<button class="btn" onClick="window.location.href = 'questbanco.php'">Repetir questionario</button>
 <button class="btn" onClick="window.location.href = 'historico.php'">ver meu histórico</button>
 </div>
 </body>
