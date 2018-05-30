@@ -29,7 +29,7 @@ $erro = 0;
 date_default_timezone_set('America/Sao_Paulo');
 $datalocal = date('Y/m/d');
 
-for($e=1; $e<4; $e++){
+for($e=1; $e<21; $e++){
     $auxi = "alternativa$e";
     $assist = "idPergunta $e";
 if ( isset ( $_POST[$auxi] ) ){
@@ -56,7 +56,7 @@ WHERE `FKPergunta` = '$idperg' AND `Valor` = '$respusu'";
 $resultado = mysqli_query($con, $sql2);
 
 if (mysqli_num_rows ($resultado) > 0){
- $acerto++;
+    $acerto++;
 }else{
     $erro++;
 }
@@ -74,7 +74,7 @@ if (mysqli_query($con, $sql3)) {
 
 ?>
 
-    <div class="caixa center">
+    <div class="caixa text-center">
         <ul style="list-style-type: none;">
             <li style="color: green;">
                 <i class="fa fa-check-square-o"></i>
@@ -86,7 +86,7 @@ if (mysqli_query($con, $sql3)) {
                 <?php echo "Erros: " .$erro?>
             </li>
         </ul>
-
+        <p>Você pode tentar novamente! Lembre-se, a pratica leva à perfeição!</p>
     </div>
 
     <div align="center">

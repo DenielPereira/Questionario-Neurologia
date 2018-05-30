@@ -25,7 +25,7 @@ $sql = "SELECT * FROM Pergunta ORDER BY rand()";
 $result = $con->query($sql); ?>
  <?php 
  $f = 1;
- for($i=1;$i<4;$i++){
+ for($i=1;$i<21;$i++){
     if ($result->num_rows > 0){
         while ($row = $result->fetch_assoc()) { 
      
@@ -45,22 +45,23 @@ $result = $con->query($sql); ?>
             </h3>
         </div>
         <div class="caixa col-md-0">
-            <?php echo $row['Enunciado']; ?>
+           <b> <?php echo $row['Enunciado']; ?></b>
+            <br>
             <br>
             <form action="process.php" method="POST">
-                <input id="a<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="a">
+                <input required id="a<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="a">
                 <label for="a<?php echo $f; ?>">
                     <?php echo $row['Alternativaa'] ?> </label>
                 <br>
-                <input id="b<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="b">
+                <input required id="b<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="b">
                 <label for="b<?php echo $f; ?>">
                     <?php echo $row['Alternativab'] ?> </label>
                 <br>
-                <input id="c<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="c">
+                <input required id="c<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="c">
                 <label for="c<?php echo $f; ?>">
                     <?php echo $row['Alternativac'] ?> </label>
                 <br>
-                <input id="d<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="d">
+                <input required id="d<?php echo $f; ?>" type="radio" name="alternativa<?php echo $f; ?>" value="d">
                 <label for="d<?php echo $f; ?>">
                   <?php echo $row['Alternativad'] ?> </label>
                 <br>

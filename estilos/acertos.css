@@ -8,6 +8,9 @@ body {
     background: linear-gradient(to left, #9eb8d1, #576E84);
     color: #fff !important;
 }
+p{
+    font-size: 18px !important;
+}
 .titulo{
     font-weight: 300;
     color: white;

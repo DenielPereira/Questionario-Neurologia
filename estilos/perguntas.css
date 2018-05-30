@@ -12,9 +12,9 @@
     position: relative;
     background: #FFFFFF;
     margin: 20px;
-    padding: 40px;
+    padding: 20px;
     text-align: justify;
-    font-size: 25px;
+    font-size: 17px;
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px;
 }
@@ -59,7 +59,10 @@ body {
     border-width: 0px;
     border-style: none; 
 }
-
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 p{
     text-indent: 15px;
 }
