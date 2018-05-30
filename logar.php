@@ -35,7 +35,8 @@ $dados = mysqli_fetch_array($result);
 
 					unset ($_SESSION['email']);
 					unset ($_SESSION['senha']);
-					echo "email ou senha invalidos!";
+					echo "<script> alert('Login ou senha errados!');</script>";
+					echo "<script> window.location.href = 'login.html';</script>";
 					
 				}	
  
