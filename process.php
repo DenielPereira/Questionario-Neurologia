@@ -23,6 +23,9 @@ $idusu = $_SESSION['idUsuario'];
 $acerto = 0;
 $erro = 0;
 
+date_default_timezone_set('America/Sao_Paulo');
+$datalocal = date('Y/m/d');
+
 for($e=1; $e<4; $e++){
     $auxi = "alternativa$e";
     $assist = "idPergunta $e";
@@ -30,7 +33,7 @@ if ( isset ( $_POST[$auxi] ) ){
     $_SESSION[$auxi] = $_POST[$auxi];
 }else{
     echo "Erro ao registrar a Session!";
-}
+} 
 
 $respusu = $_SESSION[$auxi];
 $idperg = $_SESSION[$assist];
@@ -54,8 +57,18 @@ if (mysqli_num_rows ($resultado) > 0){
 }else{
     $erro++;
 }
-
 }
+
+$sql3 = "INSERT INTO `Historico` (idHistorico, Data, Quant_acertos, Quant_erros, FKUsuario)
+VALUES (NULL, '$datalocal', '$acerto', '$erro', '$idusu')";
+if (mysqli_query($con, $sql3)) {
+    //prossegue;
+    } else {
+
+    echo "Erro: " . $sql . "<br>" . mysqli_error($con);
+}
+
+
 ?>
 
 <div class="caixa center">
