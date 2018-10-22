@@ -19,7 +19,7 @@ if ($resultado == 0){
 $sql = "INSERT INTO `Usuario` (idUsuario, Email, Nome, Sobrenome, Senha, Data_nascimento)
 VALUES (NULL, '$email', '$nome', '$sobrenome', '$senha', '$datanasc')";
 
-if (mysqli_query($con, $sql)) {
+if (mysqli_query($con, $sql) && $resultado == 0) {
     echo "<script> alert('Cadastro feito sucesso!');</script>";
     echo "<script> window.location.href = 'login.html';</script>";
 } else {
